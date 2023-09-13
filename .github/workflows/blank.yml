@@ -24,9 +24,12 @@ jobs:
        with:
          dotnet-version: |
            8.0.x
+           
+     - name: Create test project
+       run: dotnet new nunit
 
-     - name: Create new console app
-       run: dotnet new console
+     - name: Show me the test file
+       run: cat UnitTest1.cs
 
-     - name: Run the default console app
-       run: dotnet run
+     - name: Run the test
+       run: dotnet test
